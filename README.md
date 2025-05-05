@@ -35,6 +35,18 @@ make
 ./auto_suggest
 ```
 
+### 运行单元测试
+```bash
+# 确保已安装Google Test框架
+brew install googletest
+
+# 构建并运行测试
+cd build
+cmake -DCMAKE_PREFIX_PATH=/usr/local/opt/googletest ..
+make
+./trie_tests
+```
+
 ### 直接编译
 ```bash
 clang++ -std=c++17 -Iinclude src/*.cpp -o auto_suggest
@@ -56,7 +68,9 @@ auto-suggest-cpp/
 │   └── trie_node.hpp
 ├── src/
 │   ├── trie.cpp
-│   └── main.cpp
+│   ├── main.cpp
+│   └── tests/
+│       └── trie_tests.cpp
 ├── CMakeLists.txt
 └── README.md
 ```
